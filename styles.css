@@ -1,0 +1,161 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #fff4f8; /* Light pink/white background */
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .container {
+    text-align: center;
+    z-index: 2;
+  }
+  
+  h1 {
+    color: #d1475e;
+    font-size: 2.5em;
+    margin-bottom: 1em;
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .answer-button {
+    padding: 15px 25px;
+    font-size: 1.2em;
+    background-color: #d1475e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .answer-button:hover {
+    background-color: #ff6680;
+  }
+  
+  .answer-button.animate {
+    animation: colorTransition 0.4s forwards;
+  }
+  
+  #slider-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .slider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  #love-slider {
+    margin-top: 10px;
+    width: 200px;
+    -webkit-appearance: none; /* Ensures the slider is customizable across browsers */
+    appearance: none;
+    background-color: #d1475e;
+    height: 5px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+  }
+  
+  #slider-value {
+    font-weight: bold;
+    color: red;
+    font-size: 1.2em;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Heart container styling */
+  #hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  /* Floating hearts in the background */
+  .background-hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .background-hearts::before, .background-hearts::after {
+    content: "❤️";
+    position: absolute;
+    font-size: 1.5rem;
+    color: #ffb3c6;
+    animation: swim 6s infinite linear;
+  }
+  
+  .background-hearts::before {
+    top: 20%;
+    left: 10%;
+    animation-duration: 5s;
+    font-size: 2rem;
+  }
+  
+  .background-hearts::after {
+    top: 80%;
+    right: 15%;
+    font-size: 1.8rem;
+  }
+  
+  /* Animation keyframes */
+  @keyframes swim {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50vw, -50vh); }
+  }
+  
+  .heart {
+    position: absolute;
+    font-size: 20px;
+    color: #ff4d6d;
+    animation: float 3s ease-in-out forwards;
+    z-index: 3;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) rotate(720deg);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes colorTransition {
+    0% { background-color: #d1475e; }
+    100% { background-color: #ffb3c6; }
+  }
+  

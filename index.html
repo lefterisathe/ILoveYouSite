@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Do You Love Me?</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='1em' font-size='28'>❤️</text></svg>">
+</head>
+<body>
+  <div class="background-hearts"></div>
+  <div class="container">
+    <h1>Do you love me?</h1>
+    <div class="button-container">
+      <button class="answer-button" onclick="showHearts(this)">Yes</button>
+      <button class="answer-button" onclick="showHearts(this)">Yes</button>
+    </div>
+    <div id="slider-container" class="hidden">
+      <label for="love-slider">How much? ❤️</label>
+      <div class="slider-wrapper">
+        <input type="range" id="love-slider" min="0" max="100" value="0" oninput="showSliderHearts(this)">
+        <span id="slider-value">0%</span>
+      </div>
+    </div>
+  </div>
+  <div id="hearts-container"></div>
+  <script src="script.js"></script>
+</body>
+</html>

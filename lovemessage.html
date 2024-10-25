@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Love You Too!</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='1em' font-size='28'>❤️</text></svg>">
+
+  <style>
+    /* Page layout */
+    body {
+      background-color: #ffe6f2;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      color: #d1475e;
+      font-size: 2em;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Centered message */
+    .message {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Heart animation container */
+    .background-hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    /* Individual heart styling */
+    .background-heart {
+      position: absolute;
+      font-size: 1.5rem;
+      color: #ff4d6d;
+      opacity: 0.8;
+      animation: swim 8s infinite linear;
+    }
+
+    /* Random positioning and sizes */
+    .background-heart:nth-child(1) { top: 10%; left: 15%; animation-duration: 6s; font-size: 2rem; }
+    .background-heart:nth-child(2) { top: 20%; right: 10%; animation-duration: 7s; font-size: 2.5rem; }
+    .background-heart:nth-child(3) { top: 80%; left: 20%; animation-duration: 9s; font-size: 1.8rem; }
+    .background-heart:nth-child(4) { top: 40%; left: 80%; animation-duration: 5s; font-size: 2.2rem; }
+    .background-heart:nth-child(5) { top: 60%; right: 30%; animation-duration: 8s; font-size: 2rem; }
+
+    /* Animation for swimming hearts */
+    @keyframes swim {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+      }
+      50% {
+        transform: translateY(-20vh) translateX(10vw);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-40vh) translateX(-10vw);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background hearts container -->
+  <div class="background-hearts">
+    <div class="background-heart">❤️</div>
+    <div class="background-heart">❤️</div>
+    <div class="background-heart">❤️</div>
+    <div class="background-heart">❤️</div>
+    <div class="background-heart">❤️</div>
+  </div>
+
+  <!-- Love message -->
+  <div class="message">I love you too! ❤️</div>
+</body>
+</html>
